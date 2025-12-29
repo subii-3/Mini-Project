@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art of Farming</title>
+    <link rel="stylesheet" href="{% static 'css/pro.css' %}">
+</head>
+<body>
+    <header id="header1">
+        <div class="container">
+            <h1>ART OF FARMING</h1>
+        </div>
+    </header>
+    <nav id="navbar">
+        <div class="container">
+            <div class="auth-links">
+                <h4><a href="{% url 'Signup' %}">Signup</a></h4>
+                <h4><a href="{% url 'login' %}">Login</a></h4>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'crop' %}">Crop Management</a></li>
+                <li><a href="{% url 'product' %}">Products</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="showcase">
+        <div class="container">
+            <h1>Welcome to Our Farm</h1>
+        </div>
+    </section>
+    <main class="container">
+        <section id="main">
+            <h1>Agriculture</h1>
+            <p>Agriculture, with its allied sectors, is unquestionably the largest livelihood provider in India,
+                 more so in the vast rural areas. It also contributes a significant figure to the Gross Domestic Product (GDP). 
+                Sustainable agriculture, in terms of food security, rural employment, and environmentally sustainable technologies such as soil conservation,
+                 sustainable natural resource management and biodiversity protection, are essential for holistic rural development.</p>
+        </section>
+        <aside id="sidebar">
+            <p>Indian agriculture and allied activities have witnessed a green revolution, a white revolution, a yellow revolution and a blue revolution.
+                This section provides information on agricultural produces, machinery, research, and more. Detailed information on government policies, schemes, agriculture loans, market prices, animal husbandry, fisheries, horticulture, loans & credit, sericulture, and more is also available.</p>
+        </aside>
+    </main>
+    <footer id="foot1">
+        <p>&copy; 2023 ART OF FARMING. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Your Cart</h1>
+        <a href="{% url 'product' %}" class="back-link">Back to Products</a>
+    </div>
+    <div class="cart-items" id="cart-items">
+        <!-- Cart items will be dynamically added here -->
+    </div>
+
+    <script>
+    function renderCart() {
+        // Retrieve cart from local storage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartItemsContainer = document.getElementById('cart-items');
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            return;
+        }
+
+        // Generate HTML for cart items
+        let cartItemsHtml = cart.map(item => `
+            <div class="cart-item">
+                <h2>${item.name}</h2>
+                <p>$${item.price}</p>
+                <p>Quantity: ${item.quantity}</p>
+            </div>
+        `).join('');
+
+        cartItemsContainer.innerHTML = cartItemsHtml;
+    }
+
+    // Render cart items on page load
+    window.onload = renderCart;
+    </script>
+</body>
+</html>

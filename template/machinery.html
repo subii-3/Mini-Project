@@ -1,0 +1,173 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbicides</title>
+    <link rel="stylesheet" href="../static/css/herbicide.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>MACHINERY TOOLS</h1>
+        <a href="{% url 'cart' %}" class="cart-icon">🛒</a>
+        <a href="{% url 'wishlist' %}" class="wishlist-icon">🌟</a>
+    </div>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="../static/img/m1.jpg" alt="Product 1" class="product-image">
+            <div class="product-details">
+                <h2>HAND WEEDER</h2>
+                <p class="product-price">$650.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('HAND WEEDER')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('HAND WEEDER', 650)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/m10.jpg" alt="Product 2" class="product-image">
+            <div class="product-details">
+                <h2>FARMGUARD KNAPSACK</h2>
+                <p class="product-price">$990.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('FARMGUARD KNAPSACK')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('FARMGUARD KNAPSACK', 990)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/m2.jpg" alt="Product 3" class="product-image">
+            <div class="product-details">
+                <h2>TAPAS KIRAN MULCHING SHEET</h2>
+                <p class="product-price">$300.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('TAPAS KIRAN MULCHING SHEET')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('TAPAS KIRAN MULCHING SHEET', 300)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/m3.jpg" alt="Product 4" class="product-image">
+            <div class="product-details">
+                <h2>FARMER SAFETY KIT</h2>
+                <p class="product-price">$560.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('FARMER SAFETY KIT')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('FARMER SAFETY KIT', 560)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="../static/img/m4.jpg" alt="Product 1" class="product-image">
+            <div class="product-details">
+                <h2>FARMER BOOTS</h2>
+                <p class="product-price">$490.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('FARMER BOOTS')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('SAAHO TOMATO', 490)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/m5.jpg" alt="Product 2" class="product-image">
+            <div class="product-details">
+                <h2>HAND WEEDER</h2>
+                <p class="product-price">$100.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('HAND WEEDER')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('HAND WEEDER', 100)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/m6.jpg" alt="Product 3" class="product-image">
+            <div class="product-details">
+                <h2>NEPTUNE KNAPSACK</h2>
+                <p class="product-price">$434.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('NEPTUNE KNAPSACK')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('NEPTUNE KNAPSACK', 434)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/m7.jpg" alt="Product 4" class="product-image">
+            <div class="product-details">
+                <h2>MIPATEX RAIN HOSE PIPE</h2>
+                <p class="product-price">$700.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('MIPATEX RAIN HOSE PIPE')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('MIPATEX RAIN HOSE PIPE', 700)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="../static/img/m8.jpg" alt="Product 1" class="product-image">
+            <div class="product-details">
+                <h2>SOLAR STUDY LIGHT</h2>
+                <p class="product-price">$800.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('SOLAR STUDY LIGHT')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('SOLAR STUDY LIGHT', 800)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/m9.jpg" alt="Product 2" class="product-image">
+            <div class="product-details">
+                <h2>TARPAULIN SHEET</h2>
+                <p class="product-price">$258.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('TARPAULIN SHEET')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('TARPAULIN SHEET', 258)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/m12.jpg" alt="Product 3" class="product-image">
+            <div class="product-details">
+                <h2>GARDEN SHADE NET</h2>
+                <p class="product-price">$230.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('GARDEN SHADE NET')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('GARDEN SHADE NET', 230)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/m13.jpg" alt="Product 4" class="product-image">
+            <div class="product-details">
+                <h2>SICKLE</h2>
+                <p class="product-price">$1000.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('SICKLE')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('SICKLE', 1000)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function addToCart(productName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || []; // Get cart items from localStorage
+            cart.push({ name: productName, price: price });
+            localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart back to localStorage
+            alert(productName + " added to cart!");
+            console.log(cart); // Log cart contents (for demonstration)
+        }
+
+        function addToWishlist(productName) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || []; // Get wishlist items from localStorage
+            if (!wishlist.includes(productName)) {
+                wishlist.push(productName);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist)); // Save updated wishlist back to localStorage
+                alert(productName + " added to wishlist!");
+                console.log(wishlist); // Log wishlist contents (for demonstration)
+            } else {
+                alert(productName + " is already in your wishlist!");
+            }
+        }
+    </script>
+    </body>
+    </html>

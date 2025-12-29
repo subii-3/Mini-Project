@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="../static/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CONTEXT</h1>
+        <p>Healthy, sustainable and inclusive food systems are critical to achieve the world’s development goals. Agricultural development is one of the most powerful tools to end extreme poverty, boost shared prosperity, and feed a projected 10 billion people by 2050. Growth in the agriculture sector is two to four times more effective in raising incomes among the poorest compared to other sectors.</p>
+        <p>Agriculture is also crucial to economic growth: accounting for 4% of global gross domestic product (GDP) and in some least developing countries, it can account for more than 25% of GDP.</p>
+        <p>Risks associated with poor diets are also the leading cause of death worldwide. Millions of people are either not eating enough or eating the wrong types of food, resulting in a double burden of malnutrition that can lead to illnesses and health crises. Food insecurity can worsen diet quality and increase the risk of various forms of malnutrition, potentially leading to undernutrition as well as people being overweight and obese. An estimated 3 billion people in the world cannot afford a healthy diet.</p>
+        <h1>STRATEGY</h1>
+        <p>The World Bank Group provides knowledge, advice, and financial resources in low- and middle-income countries to transform food systems to reduce poverty and achieve green, resilient, and inclusive development.</p>
+        <p>Our work in food and agriculture focuses on:</p>
+        <ul>
+            <li>Food and nutrition security, where we work with efforts to share information, and to rapidly provide resources where they are needed, while helping countries design the long-term reforms needed to build resilient food and nutrition systems.</li>
+            <li>Climate-smart agriculture by working with client governments to provide solutions that address global climate priorities, while recognizing national contexts and development objectives.</li>
+            <li>Mobilizing capital for development in agriculture & food. We identify and leverage growth areas for productive investments, focusing on innovation and impact. And we design projects to ensure that financing boosts sustainable productivity gains, reaches smallholders and SMEs, and creates jobs to end poverty and hunger.</li>
+        </ul>
+        <div class="video-container">
+            <video id="v1" width="600" height="400" autoplay muted>
+                <source src="../static/video/ss.mp4" type="video/mp4">
+                <source src="../static/video/ss.mp4" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <button id="pauseButton" class="video-button">Pause</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('pauseButton').addEventListener('click', function() {
+            var video = document.getElementById('v1');
+            if (video.paused) {
+                video.play();
+                this.textContent = 'Pause';
+            } else {
+                video.pause();
+                this.textContent = 'Play';
+            }
+        });
+    </script>
+</body>
+</html>

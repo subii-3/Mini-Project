@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/farmer.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Farmer Dashboard</h1>
+        <h2>Welcome {{ owner_name }}!</h2>
+
+        <!-- Summary Section -->
+        <div class="summary section">
+            <h2>Summary</h2>
+            <div>Total Acres: {{ farm_size }}</div>
+            <div>Total Crops: {{ crops|length }}</div>
+            <!-- Example values for demonstration; replace with actual calculations -->
+            <div>Harvested Crops: 1200</div>
+            <div>Pending Tasks: 5</div>
+        </div>
+
+        <!-- Crop Management -->
+        <div class="crop-management section">
+            <h2>Crop Management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Crop Name</th>
+                        <th>Planted Date</th>
+                        <th>Harvest Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample Data; you may want to iterate over actual data -->
+                    <tr>
+                        <td>Wheat</td>
+                        <td>2024-03-15</td>
+                        <td>2024-07-15</td>
+                        <td>Harvested</td>
+                    </tr>
+                    <tr>
+                        <td>Corn</td>
+                        <td>2024-04-01</td>
+                        <td>2024-08-01</td>
+                        <td>Growing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Weather Update -->
+        <div class="weather section">
+            <h2>Weather Update</h2>
+            <div>Current Temperature: 78°F</div>
+            <div>Humidity: 60%</div>
+            <div>Rain Forecast: 10% chance</div>
+        </div>
+
+        <!-- Equipment Status -->
+        <div class="equipment-status section">
+            <h2>Equipment Status</h2>
+            <div>Tractor: Operational</div>
+            <div>Plow: Under Maintenance</div>
+            <div>Harvester: Operational</div>
+        </div>
+
+        <!-- Alerts/Notifications -->
+        <div class="alerts section">
+            <h2>Alerts/Notifications</h2>
+            <div>- Check irrigation system</div>
+            <div>- Fertilizer application due</div>
+            <div>- Equipment maintenance scheduled</div>
+        </div>
+
+        <!-- Performance Metrics (Optional) -->
+        <div class="performance-metrics section">
+            <h2>Performance Metrics</h2>
+            <div class="chart">
+                <h3>Crop Yield Trend</h3>
+                <div style="background: #e0e0e0; height: 200px; text-align: center; line-height: 200px;">[Crop Yield Trend Chart]</div>
+            </div>
+            <div class="top-crops">
+                <h3>Top Crops</h3>
+                <div>Corn - 1200 units</div>
+                <div>Wheat - 800 units</div>
+            </div>
+        </div>
+
+
+        <!-- Order History -->
+        <div class="order-history section">
+            <h2>Order History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Order Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>{{ order.product_name }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>{{ order.customer_name }}</td>
+                        <td>{{ order.email }}</td>
+                        <td>{{ order.phone }}</td>
+                        <td>{{ order.address }}</td>
+                        <td>{{ order.order_date }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="7">No orders found</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

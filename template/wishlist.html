@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="../static/css/wishlist.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Your Wishlist</h1>
+        <!-- Link back to product listing page -->
+        <a href="{% url 'product' %}" class="back-link">Back to Products</a>
+    </div>
+    <div class="wishlist-items">
+        <!-- Wishlist items will be dynamically added here -->
+    </div>
+
+    <script>
+        // Function to display wishlist items from localStorage
+        function displayWishlist() {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || []; // Get wishlist items from localStorage
+            const wishlistItemsContainer = document.querySelector('.wishlist-items');
+
+            wishlistItemsContainer.innerHTML = ''; // Clear previous content
+
+            wishlist.forEach(item => {
+                const wishlistItemElement = document.createElement('div');
+                wishlistItemElement.classList.add('wishlist-item');
+                wishlistItemElement.innerHTML = `
+                    <span>${item}</span>
+                    <button class="remove-from-wishlist" onclick="removeFromWishlist('${item}')">Remove</button>
+                `;
+                wishlistItemsContainer.appendChild(wishlistItemElement);
+            });
+        }
+
+        // Function to remove item from wishlist
+        function removeFromWishlist(productName) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist = wishlist.filter(item => item !== productName);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            displayWishlist();
+            alert(productName + " removed from wishlist!");
+        }
+
+        // Call displayWishlist when the page loads
+        displayWishlist();
+    </script>
+</body>
+</html>

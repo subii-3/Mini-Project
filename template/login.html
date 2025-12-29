@@ -1,0 +1,40 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/login.css"> 
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <label for="userType">Who's Going To Login:</label>
+            <select id="userType" name="userType">
+                <option value="vendor">Vendor</option>
+                <option value="farmer">Farmer</option>
+            </select>
+            
+            <label for="username">Username:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+            <br>
+            <br>
+            <button type="submit">Logout</button>
+            
+            <p><a href="{% url 'Signup' %}">Sign Up</a></p>
+        </form>
+    </div>
+</body>
+</html>
+  

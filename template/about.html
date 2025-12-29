@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>About Us</h1>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="intro">
+            <img src="{% static 'img/bh.jpg' %}" alt="Company Image">
+            {% if about_info %}
+            <div class="about-details">
+                <h2>Established On</h2>
+                <p>We were established on <b>{{ about_info.opening_date }}</b>.</p>
+                
+                <h2>Years of Service</h2>
+                <p>We have been serving for about <b>{{ about_info.government_work_years }}</b> years.</p>
+                
+                {% if about_info.other_info %}
+                    <p>{{ about_info.other_info }}</p>
+                {% endif %}
+            </div>
+            {% endif %}
+        </section>
+        
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p><strong>Email:</strong> <a href="mailto:subitha8338@gamil.com">subitha8338@gamil.com</a></p>
+            <p><strong>Address:</strong> Pillaiyar Kovil Street, Kallidaikurichi, Tirunelveli, 627416</p>
+            <p><strong>Phone:</strong> <a href="tel:8248746268">8248746268</a></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Art Of Farming. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

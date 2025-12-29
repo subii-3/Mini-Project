@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbicides</title>
+    <link rel="stylesheet" href="../static/css/herbicide.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>FUNGICIDES</h1>
+        <a href="{% url 'cart' %}" class="cart-icon">🛒</a>
+        <a href="{% url 'wishlist' %}" class="wishlist-icon">🌟</a>
+    </div>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="../static/img/f1.jpg" alt="Product 1" class="product-image">
+            <div class="product-details">
+                <h2>SAAF</h2>
+                <p class="product-price">$350.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('SAAF')">&#10084;</a> 
+                <button class="add-to-cart-button" onclick="addToCart('SAAF', 350)">Add to Cart</button>  
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/f2.jpg" alt="Product 2" class="product-image">
+            <div class="product-details">
+                <h2>INDOFIL</h2>
+                <p class="product-price">$500.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('INDOFIL')">&#10084;</a>  
+                <button class="add-to-cart-button" onclick="addToCart('INDOFIL', 500)">Add to Cart</button> 
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/f3.jpg" alt="Product 3" class="product-image">
+            <div class="product-details">
+                <h2>BAVISTIN</h2>
+                <p class="product-price">$266.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('BAVISTIN')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('BAVISTIN', 266)">Add to Cart</button>   
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/f4.jpg" alt="Product 4" class="product-image">
+            <div class="product-details">
+                <h2>RIDOMIL GOLD</h2>
+                <p class="product-price">$355.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('RIDOMIL GOLD')">&#10084;</a> 
+                <button class="add-to-cart-button" onclick="addToCart('RIDOMIL GOLD', 355)">Add to Cart</button>  
+            </div>
+        </div>
+    </div>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="../static/img/f5.jpg" alt="Product 1" class="product-image">
+            <div class="product-details">
+                <h2>ANTRACOL</h2>
+                <p class="product-price">$222.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('ANTRACOL')">&#10084;</a>  
+                <button class="add-to-cart-button" onclick="addToCart('ANTRACOL', 222)">Add to Cart</button> 
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/f6.jpg" alt="Product 2" class="product-image">
+            <div class="product-details">
+                <h2>AMISTAR</h2>
+                <p class="product-price">$102.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('AMISTAR')">&#10084;</a>  
+                <button class="add-to-cart-button" onclick="addToCart('AMISTAR', 102)">Add to Cart</button> 
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/f7.jpg" alt="Product 3" class="product-image">
+            <div class="product-details">
+                <h2>NATIVO</h2>
+                <p class="product-price">$404.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('NATIVO')">&#10084;</a> 
+                <button class="add-to-cart-button" onclick="addToCart('NATIVO',404)">Add to Cart</button>  
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/f8.jpg" alt="Product 4" class="product-image">
+            <div class="product-details">
+                <h2>BLITOX</h2>
+                <p class="product-price">$743.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('BLITOX')">&#10084;</a>   
+                <button class="add-to-cart-button" onclick="addToCart('BLITOX', 743)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="../static/img/f9.jpg" alt="Product 1" class="product-image">
+            <div class="product-details">
+                <h2>ACROBAT</h2>
+                <p class="product-price">$300.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('ACROBAT')">&#10084;</a>  
+                <button class="add-to-cart-button" onclick="addToCart('ACROBAT', 300)">Add to Cart</button> 
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/f10.jpg" alt="Product 2" class="product-image">
+            <div class="product-details">
+                <h2>DHANUKA M45</h2>
+                <p class="product-price">$268.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('DHANUKA M45')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('DHANUKA M45', 268)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/f11.jpg"alt="Product 3" class="product-image">
+            <div class="product-details">
+                <h2>BLUE COPPER</h2>
+                <p class="product-price">$467.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('BLUE COPPER')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('BLUE COPPER', 467)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../static/img/f12.jpg" alt="Product 4" class="product-image">
+            <div class="product-details">
+                <h2>CONTAF PLUS</h2>
+                <p class="product-price">$239.00</p>
+                <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                <a href="{% url 'wishlist' %}" class="wishlist-button" onclick="addToWishlist('CONTAF PLUS')">&#10084;</a>
+                <button class="add-to-cart-button" onclick="addToCart('CONTAF PLUS', 239)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function addToCart(productName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || []; // Get cart items from localStorage
+            cart.push({ name: productName, price: price });
+            localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart back to localStorage
+            alert(productName + " added to cart!");
+            console.log(cart); // Log cart contents (for demonstration)
+        }
+
+        function addToWishlist(productName) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || []; // Get wishlist items from localStorage
+            if (!wishlist.includes(productName)) {
+                wishlist.push(productName);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist)); // Save updated wishlist back to localStorage
+                alert(productName + " added to wishlist!");
+                console.log(wishlist); // Log wishlist contents (for demonstration)
+            } else {
+                alert(productName + " is already in your wishlist!");
+            }
+        }
+    </script>
+</body>
+</html>

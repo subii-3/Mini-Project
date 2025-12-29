@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="{% url 'cart' %}" class="nav-icon">🛒</a>
+            <a href="{% url 'wishlist' %}" class="nav-icon">🌟</a>
+        </div>
+        <div class="navbar-center">
+            <h1>Product List</h1>
+        </div>
+        <div class="navbar-right">
+            <!-- Search Form -->
+            <form method="get" action="{% url 'product' %}" class="search-form">
+                <input type="text" name="q" placeholder="Search products" value="{{ request.GET.q }}">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Product List in Box Layout -->
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-card">
+                <a href="{% url 'product_detail' product.pk %}">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default-product.jpg' %}{% endif %}" alt="{{ product.name }}">
+                    <h2>{{ product.name }}</h2>
+                    <p class="product-price">${{ product.price }}</p>
+                </a>
+                <div class="product-details">
+                    <a href="#" class="wishlist-button" onclick="addToWishlist('{{ product.name }}')">&#10084;</a>
+                    <button class="add-to-cart-button" onclick="addToCart('{{ product.pk }}', '{{ product.name }}', '{{ product.price }}')">Add to Cart</button>
+                    <a href="{% url 'order' %}" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            {% empty %}
+            <div class="no-products">No products available.</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        function addToCart(productId, productName, productPrice) {
+            // Retrieve cart from local storage or initialize as an empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+            // Check if the product is already in the cart
+            let existingProduct = cart.find(item => item.id === productId);
+        
+            if (existingProduct) {
+                // If the product is already in the cart, increase the quantity
+                existingProduct.quantity += 1;
+            } else {
+                // Otherwise, add the new product with quantity 1
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                });
+            }
+        
+            // Save the updated cart to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+        
+            alert('Product added to cart!');
+        }
+        
+        function addToWishlist(productName) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            if (!wishlist.includes(productName)) {
+                wishlist.push(productName);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                alert(productName + " added to wishlist!");
+                console.log(wishlist);
+            } else {
+                alert(productName + " is already in your wishlist!");
+            }
+        }
+    </script>
+</body>
+</html>

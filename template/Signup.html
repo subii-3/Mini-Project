@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'img/yy.jpg' %}" alt="Signup Image">
+        <h1>Signup here..</h1>
+        <form action="{% url 'Signup' %}" method="POST">
+            {% csrf_token %}
+            {% if error %}
+                <div class="alert" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <label for="firstname">Firstname:</label>
+            <input type="text" name="firstname" value="{{ values.firstname }}" required>
+            <label for="lastname">Lastname:</label>
+            <input type="text" name="lastname" value="{{ values.lastname }}" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{ values.email }}" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" value="{{ values.password }}" required>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+</body>
+</html>
