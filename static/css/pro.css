@@ -1,0 +1,117 @@
+
+.container{
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+}
+.container h1{
+    text-align: center;
+    font-family: cursive;
+    color: darkgreen;
+}
+#header1{
+    background-color: lightpink;
+    color: #fff;
+}
+nav#navbar {
+    background-color: #333; /* Navbar background color */
+    padding: 10px;
+	font-size: 17px;
+}
+
+nav#navbar .container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between auth-links and nav-links */
+    align-items: center; /* Center items vertically */
+}
+
+/* Push the auth links to the start (left) */
+.auth-links {
+    display: flex; /* Display auth links in a row */
+}
+
+.auth-links h4 {
+    margin: 0 10px; /* Space between Signup and Login */
+}
+
+.auth-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Link color */
+    font-weight: bold; /* Bold text */
+}
+
+/* Push the navigation links to the end (right) */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display links in a row */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between each link */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Link color */
+    font-weight: bold; /* Bold text */
+}
+
+#showcase{
+	background-image: url('/static/img/j.jpg');
+    background-position: center right;
+    height: 200px;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#showcase h1{
+	font-size: 50px;
+	padding-top: 30px;
+	color: lightgoldenrodyellow;
+	text-shadow: black;
+    text-align: center;
+}
+#showcase>.container>h1{
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#main{
+	float:left;
+	width:70%;
+	padding:0 30px;
+	box-sizing: border-box;
+	font-size:20px;
+}
+#main h1{
+    text-align: center;
+}
+#main p{
+	font-family: sans-serif;
+}
+#sidebar{
+	width:30%;
+	float: right;
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	box-sizing: border-box;
+}
+#foot1{
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+	margin-top: 40px;
+}
+@media(max-width:600px){
+	#main{
+		width: 100%;
+		float:none;
+	}
+	#sidebar{
+		width: 100%;
+		float:none;
+	}
+}

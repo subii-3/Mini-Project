@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e2a5a5;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #d39797;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+    text-align: center;
+    color: #ebcfcf;
+    background-color: #333;
+}
+.section {
+    margin-bottom: 20px;
+}
+.section h2 {
+    margin-bottom: 10px;
+    color: #444;
+}
+.summary, .alerts, .weather {
+    margin-bottom: 20px;
+}
+.summary div, .weather div, .alerts div {
+    margin-bottom: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+}
+.chart, .top-crops {
+    margin-bottom: 20px;
+}
+.chart div, .top-crops div {
+    margin-bottom: 10px;
+}
+
+.purchase-history {
+    margin-top: 20px;
+}
+
+.purchase-history table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.purchase-history th, .purchase-history td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.purchase-history th {
+    background-color: #f4f4f4;
+    text-align: left;
+}

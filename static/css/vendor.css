@@ -1,0 +1,141 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e2a5a5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #d39797;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ece3e3;
+    background-color: #333;
+}
+
+/* Summary Section */
+.summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.summary div {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+}
+
+/* Recent Orders Section */
+.recent-orders {
+    margin-bottom: 20px;
+}
+
+.recent-orders h2 {
+    color: #333;
+}
+
+.recent-orders table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-orders th, .recent-orders td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.recent-orders th {
+    background-color: #f4f4f4;
+}
+
+/* Performance Metrics Section */
+.performance-metrics {
+    margin-bottom: 20px;
+}
+
+.chart, .top-products {
+    margin-bottom: 20px;
+}
+
+.chart h3, .top-products h3 {
+    color: #333;
+}
+
+.chart div {
+    background: #e0e0e0;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    border-radius: 4px;
+}
+
+.top-products div {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Alerts Section */
+.alerts {
+    margin-bottom: 20px;
+}
+
+.alerts h2 {
+    color: #333;
+}
+
+.alerts div {
+    background: #fff3f3;
+    border: 1px solid #f2b5b5;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Add your styles here */
+.form-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-popup form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
